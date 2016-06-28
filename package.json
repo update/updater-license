@@ -1,0 +1,60 @@
+{
+  "name": "updater-license",
+  "description": "Update the copyright statement and year in a MIT `LICENSE` file.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/updater-license",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/updater-license",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/updater-license/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "utils.js"
+  ],
+  "main": "index.js",
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "delete": "^0.3.2",
+    "engine": "^0.1.11",
+    "extend-shallow": "^2.0.1",
+    "lazy-cache": "^2.0.1",
+    "through2": "^2.0.1",
+    "update-copyright": "^0.2.3",
+    "year": "^0.2.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.9",
+    "mocha": "^2.4.5"
+  },
+  "keywords": [
+    "license",
+    "update"
+  ],
+  "verb": {
+    "related": {
+      "list": []
+    },
+    "reflinks": [
+      "update"
+    ],
+    "toc": false,
+    "layout": "common-minimal",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
