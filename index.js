@@ -60,7 +60,7 @@ module.exports = function(app, base, env) {
           return;
         }
 
-        var template = fs.readFileSync(dir('license-mit.tmpl'), 'utf8');
+        var template = fs.readFileSync(dir('mit.tmpl'), 'utf8');
         var context = utils.copyright.parse(utils.copyright(file.contents.toString()));
         var engine = new utils.Engine();
         var filepath = file.path;
