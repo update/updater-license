@@ -8,12 +8,6 @@ var utils = require('./utils');
 module.exports = function(app, base, env) {
 
   /**
-   * Register sub-generator `license`
-   */
-
-  // app.register('license', require('generate-license'));
-
-  /**
    * Delete the existing `LICENSE` or `LICENSE-MIT` file in the current working directory.
    * This task is also aliased as `license:license-del` to free up the `new` task name in case
    * you use this generator as a [plugin](#api).
