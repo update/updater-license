@@ -2,9 +2,9 @@
   "name": "updater-license",
   "description": "Update the copyright statement and year in a MIT `LICENSE` file.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/updater-license",
+  "homepage": "https://github.com/update/updater-license",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/updater-license",
+  "repository": "update/updater-license",
   "bugs": {
     "url": "https://github.com/jonschlinkert/updater-license/issues"
   },
@@ -35,8 +35,19 @@
     "mocha": "^2.4.5"
   },
   "keywords": [
+    "fix",
     "license",
-    "update"
+    "lint",
+    "linter",
+    "maintain",
+    "plugin",
+    "plugins",
+    "up-to-date",
+    "update",
+    "update-plugin",
+    "update-updater",
+    "updater",
+    "updaterplugin"
   ],
   "verb": {
     "related": {
