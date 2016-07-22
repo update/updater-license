@@ -11,6 +11,8 @@
   "license": "MIT",
   "files": [
     "index.js",
+    "LICENSE",
+    "README.md",
     "templates",
     "utils.js"
   ],
@@ -24,16 +26,22 @@
   },
   "dependencies": {
     "delete": "^0.3.2",
-    "engine": "^0.1.11",
+    "engine": "^0.1.12",
     "extend-shallow": "^2.0.1",
+    "generate-license": "^0.3.4",
+    "helper-ask": "^0.1.4",
+    "is-valid-app": "^0.2.0",
     "lazy-cache": "^2.0.1",
+    "parser-front-matter": "^1.4.1",
     "through2": "^2.0.1",
-    "update-copyright": "^0.2.3",
+    "update-copyright": "^0.2.4",
     "year": "^0.2.1"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.9",
-    "mocha": "^2.4.5"
+    "mocha": "^2.5.3",
+    "npm-install-global": "^0.1.2",
+    "update": "^0.7.3"
   },
   "keywords": [
     "fix",
@@ -52,13 +60,17 @@
   ],
   "verb": {
     "related": {
-      "list": []
+      "list": [
+        "updater-editorconfig",
+        "updater-eslint",
+        "updater-license"
+      ]
     },
     "reflinks": [
       "update"
     ],
     "toc": false,
-    "layout": "common-minimal",
+    "layout": "updater",
     "tasks": [
       "readme"
     ],
