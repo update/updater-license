@@ -1,3 +1,7 @@
+---
+rename:
+  basename: LICENSE
+---
 The MIT License (MIT)
 
 Copyright (c) 2009, 2011, 2012 Jon Schlinkert

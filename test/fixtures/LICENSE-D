@@ -1,3 +1,7 @@
+---
+rename:
+  basename: LICENSE
+---
 Copyright 2012 Jon Sclhinkert
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
