@@ -5,8 +5,6 @@ var fs = require('fs');
 var path = require('path');
 var assert = require('assert');
 var copyright = require('update-copyright');
-var license = require('..');
-var orig = process.cwd();
 
 var fixtures = path.resolve.bind(path, __dirname, 'fixtures');
 var expected = path.resolve.bind(path, __dirname, 'expected');

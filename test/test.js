@@ -10,7 +10,6 @@ var del = require('delete');
 var updater = require('..');
 var app;
 
-var orig = process.cwd();
 var fixtures = path.resolve.bind(path, __dirname, 'fixtures');
 var actual = path.resolve.bind(path, __dirname, 'actual');
 
@@ -21,8 +20,7 @@ function exists(name, cb) {
     fs.stat(filepath, function(err, stat) {
       if (err) return cb(err);
       assert(stat);
-      cb();
-      // del(filepath, cb);
+      del(filepath, cb);
     });
   };
 }
