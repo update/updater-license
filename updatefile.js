@@ -1,5 +1,6 @@
 'use strict';
 
+var del = require('delete');
 var ask = require('helper-ask');
 var utils = require('./utils');
 
@@ -68,7 +69,13 @@ module.exports = function(app) {
       .pipe(matter())
       .pipe(renameFile())
       .pipe(updateLicense(app))
-      .pipe(app.dest(app.cwd));
+      .pipe(app.dest(function(file) {
+        if (file.basename === 'LICENSE-MIT') {
+          del.sync(file.path, {force: true});
+          file.basename = 'LICENSE';
+        }
+        return app.cwd;
+      }));
   });
 
   /**
@@ -88,7 +95,6 @@ function updateLicense(app) {
       next(null, file);
       return;
     }
-
     var template;
     try {
       var views = app.licenses.views;

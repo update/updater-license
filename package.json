@@ -1,7 +1,7 @@
 {
   "name": "updater-license",
   "description": "Update the copyright statement and year in a MIT `LICENSE` file.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/update/updater-license",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "update/updater-license",
@@ -11,8 +11,6 @@
   "license": "MIT",
   "files": [
     "index.js",
-    "LICENSE",
-    "README.md",
     "templates",
     "updatefile.js",
     "utils.js"
@@ -70,7 +68,7 @@
     "reflinks": [
       "update"
     ],
-    "toc": false,
+    "toc": true,
     "layout": "updater",
     "tasks": [
       "readme"
