@@ -4,6 +4,7 @@ require('mocha');
 var fs = require('fs');
 var path = require('path');
 var assert = require('assert');
+var year = require('year')();
 var copyright = require('update-copyright');
 
 var fixtures = path.resolve.bind(path, __dirname, 'fixtures');
@@ -14,13 +15,13 @@ function read(fp) {
 
 describe('update', function() {
   it('should update a copyright statement:', function() {
-    assert.equal(copyright('Copyright (c) 2014, Jon Schlinkert.'), 'Copyright (c) 2014, 2016, Jon Schlinkert.');
-    assert.equal(copyright('Copyright (c) 2015, Jon Schlinkert.'), 'Copyright (c) 2015-2016, Jon Schlinkert.');
+    assert.equal(copyright('Copyright (c) 2014, Jon Schlinkert.'), 'Copyright (c) 2014, ' + year + ', Jon Schlinkert.');
+    assert.equal(copyright('Copyright (c) ' + (year - 1) + ', Jon Schlinkert.'), 'Copyright (c) ' + (year - 1) + '-' + year + ', Jon Schlinkert.');
   });
 
   it('should add a copyright symbol if missing:', function() {
-    assert.equal(copyright('Copyright 2014, Jon Schlinkert.'), 'Copyright © 2014, 2016, Jon Schlinkert.');
-    assert.equal(copyright('Copyright 2015, Jon Schlinkert.'), 'Copyright © 2015-2016, Jon Schlinkert.');
+    assert.equal(copyright('Copyright 2014, Jon Schlinkert.'), 'Copyright © 2014, ' + year + ', Jon Schlinkert.');
+    assert.equal(copyright('Copyright ' + (year - 1) + ', Jon Schlinkert.'), 'Copyright © ' + (year - 1) + '-' + year + ', Jon Schlinkert.');
   });
 
   it.skip('should use a template to update the license:', function() {

@@ -28,7 +28,6 @@
     "test": "mocha"
   },
   "dependencies": {
-
     "delete": "^1.0.1",
     "engine": "^0.1.12",
     "extend-shallow": "^2.0.1",
@@ -36,16 +35,17 @@
     "helper-ask": "^0.2.1",
     "is-valid-app": "^0.3.0",
     "lazy-cache": "^2.0.2",
+    "parse-copyright": "^0.4.0",
     "parser-front-matter": "^1.6.3",
     "through2": "^2.0.3",
     "update-copyright": "^1.0.0",
     "year": "^0.2.1"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.12",
     "mocha": "^3.4.2",
+    "update": "^0.7.4",
     "npm-install-global": "^1.0.0",
-    "update": "^0.7.4"
+    "gulp-format-md": "^0.1.12"
   },
   "keywords": [
     "fix",

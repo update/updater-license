@@ -2,6 +2,7 @@
 
 var del = require('delete');
 var ask = require('helper-ask');
+var Engine = require('engine');
 var utils = require('./utils');
 
 module.exports = function(app) {
@@ -14,7 +15,8 @@ module.exports = function(app) {
   app.asyncHelper('ask', ask(app));
 
   /**
-   * Register a generator
+   * Register a generator for creating a new `LICENSE` file
+   * when needed
    */
 
   app.register('new', require('generate-license'));
@@ -91,11 +93,9 @@ module.exports = function(app) {
 
 function updateLicense(app) {
   return utils.through.obj(function(file, enc, next) {
-    if (hasYear(file.contents.toString())) {
-      next(null, file);
-      return;
-    }
+    var filepath = file.path;
     var template;
+
     try {
       var views = app.licenses.views;
       for (var key in views) {
@@ -114,11 +114,24 @@ function updateLicense(app) {
         return;
       }
 
-      var filepath = file.path;
-      var context = utils.copyright.parse(utils.copyright(file.contents.toString()));
-      var engine = new utils.Engine();
-      var str = engine.render(template.content, context[0]);
-      file.contents = new Buffer(str);
+      var str = file.contents.toString();
+      var tok = utils.parse(str);
+      var latest = utils.copyright(tok.latest.statement, tok.latest);
+      var lines = [tok.prefix, '', latest];
+      var len = tok.authors.length;
+      if (len === 1) {
+        lines.push('');
+      }
+
+      for (var i = 0; i < len; i++) {
+        var author = tok.authors[i];
+        if (author !== tok.latest) {
+          lines.push(author.statement, '');
+        }
+      }
+
+      lines.push(tok.license);
+      file.contents = new Buffer(lines.join('\n'));
     } catch (err) {
       next(err);
       return;
@@ -135,9 +148,9 @@ function updateLicense(app) {
  * Parse front matter
  */
 
-function matter() {
+function matter(options) {
   return utils.through.obj(function(file, enc, next) {
-    utils.parser.parse(file, next);
+    utils.parser.parse(file, options, next);
   });
 }
 
