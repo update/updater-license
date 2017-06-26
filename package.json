@@ -4,6 +4,10 @@
   "version": "0.3.0",
   "homepage": "https://github.com/update/updater-license",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
   "repository": "update/updater-license",
   "bugs": {
     "url": "https://github.com/update/updater-license/issues"
@@ -24,23 +28,24 @@
     "test": "mocha"
   },
   "dependencies": {
-    "delete": "^0.3.2",
+
+    "delete": "^1.0.1",
     "engine": "^0.1.12",
     "extend-shallow": "^2.0.1",
-    "generate-license": "^0.3.4",
-    "helper-ask": "^0.1.4",
-    "is-valid-app": "^0.2.0",
-    "lazy-cache": "^2.0.1",
-    "parser-front-matter": "^1.4.1",
-    "through2": "^2.0.1",
-    "update-copyright": "^0.2.4",
+    "generate-license": "^0.6.1",
+    "helper-ask": "^0.2.1",
+    "is-valid-app": "^0.3.0",
+    "lazy-cache": "^2.0.2",
+    "parser-front-matter": "^1.6.3",
+    "through2": "^2.0.3",
+    "update-copyright": "^1.0.0",
     "year": "^0.2.1"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.9",
-    "mocha": "^2.5.3",
-    "npm-install-global": "^0.1.2",
-    "update": "^0.7.3"
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.2",
+    "npm-install-global": "^1.0.0",
+    "update": "^0.7.4"
   },
   "keywords": [
     "fix",
@@ -48,14 +53,17 @@
     "lint",
     "linter",
     "maintain",
+    "maintainance",
     "plugin",
     "plugins",
     "up-to-date",
     "update",
     "update-plugin",
     "update-updater",
+    "updateplugin",
     "updater",
-    "updaterplugin"
+    "updaterplugin",
+    "upkeep"
   ],
   "verb": {
     "related": {
